@@ -14,10 +14,16 @@ class UsuariosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
-        $usuarios = Usuario::all();
-        return view('agendamento.grid2', compact(['usuarios']));
+        //$usuarios = Usuario::all();
+        //return view('agendamento.grid2', compact(['usuarios']));
+        return view('usuario.homeUsuario');
     }
 
     /**
